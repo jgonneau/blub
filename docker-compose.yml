@@ -1,9 +1,9 @@
 version: '3.6'
 services:
     web:
-        image: 'webdevops/php-nginx:7.3'
+        image: 'webdevops/php-nginx:7.4'
         ports:
-        - 9001:80
+        - 9999:80
         volumes:
         - './:/app'
         working_dir: /app
@@ -31,7 +31,7 @@ services:
     database:
         image: 'mariadb:10.3'
         ports:
-            - '3336:3306'
+            - '3306:3306'
         volumes:
             - ./docker/database:/var/lib/mysql
         environment:
