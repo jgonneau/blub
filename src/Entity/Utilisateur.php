@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ApiResource(
  *     itemOperations={
  *     "get"={
- *          "access_control"="is_granted('IS_AUTHENTICATED_FULLY')"
+ *          "access_control"="is_granted('ROLE_ADMIN')"
  *     }
  * },
  *     collectionOperations={"post"},
@@ -124,7 +124,7 @@ class Utilisateur implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -151,7 +151,7 @@ class Utilisateur implements UserInterface
      */
     public function getPassword(): string
     {
-        return (string) $this->password;
+        return (string)$this->password;
     }
 
     public function setPassword(string $password): self
